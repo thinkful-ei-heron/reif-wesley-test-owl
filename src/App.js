@@ -1,27 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { RenderParticipant } from './Participant';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  static defaultProps = {
+    store: {
+      participants: []
+    }
+  }
+
+  render() {
+
+    const { store } = this.props
+    const newList = store.participants.sort((x, y) => x.onStage === true ? -1 : +1)
+    const pOnStage = store.participants.filter(item => item.onStage === true);
+    return (
+      <div className="App">
+        <div className='participant-list-container'>
+          {newList.map(person => {
+            return (
+              <RenderParticipant
+                key={person.id}
+                avatar={person.avatar}
+                name={person.name}
+                inSession={person.inSession}
+                onStage={person.onStage}
+              />)
+          })}
+        </div>
+        <div className="stage">
+          {pOnStage.map(person => {
+            return (
+              <RenderParticipant
+                key={person.id}
+                avatar={person.avatar}
+                name={person.name}
+                onStage={person.onStage}
+              />
+            )
+          })}
+        </div>
+        <div className="chat-log"></div>
+        <div className="bottom-bar"></div>
+      </div>
+    )
+  }
 }
 
 export default App;
-
