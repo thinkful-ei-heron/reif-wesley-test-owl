@@ -6,3 +6,4 @@ import Store from './Store';
 
 ReactDOM.render(<App store={Store} />, document.getElementById('root'));
 
+
