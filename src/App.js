@@ -17,6 +17,7 @@ class App extends Component {
     const pOnStage = store.participants.filter(item => item.onStage === true);
     return (
       <div className="App">
+        <div className='toggles'></div>
         <div className='participant-list-container'>
           {newList.map(person => {
             return (

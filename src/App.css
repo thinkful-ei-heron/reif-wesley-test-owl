@@ -1,33 +1,43 @@
 /* App body */
 
-.parent {
+.App {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr 5fr 1fr;
+  grid-template-rows: 1fr 6fr 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  height: 100vh;
+  /* width: 100vw; */
+}
+
+/* toggle */
+
+.toggles {
+  grid-area: 1 / 1 / 1 / 1;
+  height: 10vh;
 }
 
 /* Chat */
 
-.div1 {
-  grid-area: 1 / 1 / 3 / 2;
+.chat-log {
+  grid-area: 2 / 1 / 3 / 2;
 }
 
 /* Bottom Bar */
 
-.div2 {
+.bottom-bar {
   grid-area: 3 / 1 / 4 / 3;
+  height: 10vh;
 }
 
 /* Stage */
 
-.div3 {
+.stage {
   grid-area: 1 / 2 / 3 / 3;
 }
 
 /* Participants */
 
-.div4 {
-  grid-area: 1 / 1 / 3 / 2;
+.participant-list-container {
+  grid-area: 2 / 1 / 3 / 2;
 }
