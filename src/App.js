@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+
 import { RenderParticipant } from './Participant';
+import { RenderStageParticipant } from './Stage';
 import { RenderChatItem } from './Chat';
 
 import './App.css';
@@ -67,11 +69,10 @@ class App extends Component {
         <div className="stage">
           {pOnStage.map(person => {
             return (
-              <RenderParticipant
+              <RenderStageParticipant
                 key={person.id}
                 avatar={person.avatar}
                 name={person.name}
-                onStage={person.onStage}
               />
             )
           })}
