@@ -6,7 +6,6 @@ import { RenderChatItem } from './Chat';
 
 import './App.css';
 
-
 class App extends Component {
   static defaultProps = {
     store: {
