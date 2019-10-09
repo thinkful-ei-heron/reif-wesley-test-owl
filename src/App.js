@@ -52,10 +52,10 @@ class App extends Component {
           })}
         </div>
         <div className="chat-log" hidden>
-          {store.chatEvents.map(chat => {
+          {store.chatEvents.map((chat, index) => {
             return (
               <RenderChatItem
-                key={Math.random()}
+                key={index}
                 avatar={(store.participants.find(item => item.id === chat.participantId)).avatar}
                 name={(store.participants.find(item => item.id === chat.participantId)).name}
                 type={chat.type}
